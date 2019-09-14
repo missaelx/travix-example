@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- 8
+before_install:
+- npm i -g firebase-tools
+cache:
+  directories:
+  - node_modules
+script:
+- yarn run build
+deploy:
+  provider: firebase
+  project: travis-demo-5b47e
+  skip_cleanup: true
+  token:
+    secure: 1/-tHoPtKcxxODY1uxI3OAB5gxM_Zes0b04iv751xT7yE
+env:
+  global:
+    secure: bB9b8zkDPcFeZmVF/dmjQZj9z1Yrhgsn9+cmFzqkQFce1nmSx+6Tw7wUgluyzk2YGBrRej6DMpegDYh+6czNpfETO4C1iWf6VfhJafVO/K9X/cEamqGJL2ThWWqqZjcxN5vV5jrzrlFz2zTA8qx+4lIwzHQ7aofWuSK7gttquqrGJJvt0CR/Sk01ctGYo7nKDliCgISCbW64YD/Uh1P7V+Flj8UMXxwvdULbsyHM8aAhgAbV00pkTajSGm1c+VKAT6TXePHjKHwVaj5jx3hliQ28TuZMpcc5Kovkyl950s+StOAJ2aZgWsByeLWgwRg4GPpH1B4KZAiXG5jMzXmYFwgzxLETq5OG1+O0CA1KmjjGz4x0gDqgXMyxAIRDl2m5QH8buQ6WhjbAADIX/TJtQgi2V2JfHoAWRV8Qf42Ez66vwJdknLOuXywXeNDLh5CixrL2og+YDEIs+gP/6H44YIIdcBvJvDETVNNyVIWdGUnC6F6uXO9VVn0inK+aKm7pSpMkSMMy1kK5Jl3T+EvgAHPdnVhtcUlQYHjK1KoEpyYFl5R4khJlTLES1qCeMZ/t200j1iDN86LLOCqA/YlD/LgiBHoIAzQmDoDrsbQOQWBchzG+e37Zy927vH/NTwQ27rJ4XIGb+ddKbAWN9gAWldcuaCSG4XVuS3pyzXDtnmA=
